@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerador de Currículo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon-unipar.ico" />
+</head>
+<body>
+    <div class="container">
+        <h2>Gerador de Currículo</h2>
+        <form id="curriculoForm" action="gerar_curriculo.php" method="post">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="text" id="telefone" name="telefone" required>
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco">
+            </div>
+            <div class="form-group">
+                <label>Formação Acadêmica:</label>
+                <div id="formacoes">
+                    <div class="formacao-item">
+                        <input type="text" name="formacao[]" placeholder="Curso">
+                        <input type="text" name="instituicao[]" placeholder="Instituição">
+                        <input type="text" name="ano[]" placeholder="Ano de Conclusão">
+                    </div>
+                </div>
+                <button type="button" onclick="adicionarFormacao()">Adicionar Formação</button>
+            </div>
+            <div class="form-group">
+                <label>Experiência Profissional:</label>
+                <div id="experiencias">
+                    <div class="experiencia-item">
+                        <input type="text" name="cargo[]" placeholder="Cargo">
+                        <input type="text" name="empresa[]" placeholder="Empresa">
+                        <input type="text" name="periodo[]" placeholder="Período">
+                    </div>
+                </div>
+                <button type="button" onclick="adicionarExperiencia()">Adicionar Experiência</button>
+            </div>
+            <input type="submit" value="Gerar Currículo">
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
